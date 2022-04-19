@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="loginPage.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="centerLogindiv">
@@ -13,13 +14,13 @@
         <br>
         <div>
         <label for="un"><b>E-mail</b></label>
-        <input type="text" placeholder="Enter E-mail" name="un" id="email" required >
+        <input type="text" placeholder="Enter E-mail" name="un" id="emailField" required >
         </div>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter password" name="psw" id="password" required >
+        <input type="password" placeholder="Enter password" name="psw" id="passField" required >
 
-        <button class="loginbutton">Login</button>
+        <button class="loginbutton" id="lgbtn" onclick="Loginnow()">Login</button>
         <div class="or">
             <div class="center" style="font-size: 20px;">
                 <b>Or</b>
@@ -27,13 +28,30 @@
         </div>
         <div class="bottom" >
             <div class="center">
-            <button class="registerbtn">Register</button>
+            <button class="registerbtn" onclick="goreg()">Register</button>
             </div>
         </div>
        
 
     </div>
-    
+
+
+
+
+
+
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="FirebaseConfig.js"></script>
+    <script src="login.js"></script>
+   
 </body>
-<script src="login.js"></script>
+
+<script>
+    
+</script>
 </html>
