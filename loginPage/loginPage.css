@@ -18,6 +18,7 @@ body{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     border-radius: 25px;
+    overflow: auto;
 }
 .loginbutton {
     background-color: #4CAF50;
@@ -32,7 +33,7 @@ body{
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 25px;
-    top: 65%;
+    top: 275px;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -107,7 +108,7 @@ body{
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 25px;
-    top: 70%;
+    top: 10px;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
