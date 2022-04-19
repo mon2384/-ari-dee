@@ -5,7 +5,7 @@ let loginButton = document.getElementById("lgbtn")
 
 
 function goreg(){
-    window.location.href = '../Register.html'
+    window.location.href = '../registerPage/Register.html'
 }
 
 /*function REG() {
