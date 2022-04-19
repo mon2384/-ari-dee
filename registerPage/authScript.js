@@ -4,10 +4,7 @@ var user = auth.currentUser
 const db = firebase.firestore()
 
 const backButton = document.getElementById('Login')
-backButton.addEventListener('click',backLogin)
-function backLogin(){
-    window.location.href = 'index.html'
-}
+
 
 const signUpButton = document.getElementById('submitButton')
 signUpButton.addEventListener('click', register)
@@ -28,7 +25,7 @@ function register() {
 
                 auth.signInWithEmailAndPassword(email, password)
 
-                db.collection("User").doc(user.uid).set({
+                db.collection("EATRAIDEE").doc(email).collection("UserInfo").doc("userLogin").set({
                     Username: username,
                     Email: email,
                     Password: password,
