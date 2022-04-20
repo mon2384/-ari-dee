@@ -47,7 +47,20 @@ function goreg(){
   
     auth.signInWithEmailAndPassword(email, pass)
       .then((userCredential) => {
-        user = userCredential.user;
+        user = userCredential.user
+        db.collection("EATRAIDEE").doc(email).get()
+        .then(function (doc) {
+          if(doc.exists){
+              localStorage.setItem("Username", doc.data().Username)
+          }
+          else{
+            console.log("does not exist")
+            alert("Successfully")
+          }
+            }).catch((error) => {
+                console.log("Error getting document:", error)
+            })
+        
   
         console.log("Successfully Sign in");
         Swal.fire({
@@ -103,3 +116,8 @@ function goreg(){
 
     window.location.href = '../profilePage/profilePage.html'
   }
+  function handleSubmit(username, uid){
+    localStorage.setItem("USERNAME", username)
+    localStorage.setItem("UID", uid)
+    return;
+}

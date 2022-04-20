@@ -25,7 +25,7 @@ function register() {
 
                 auth.signInWithEmailAndPassword(email, password)
 
-                db.collection("EATRAIDEE").doc(email).collection("UserInfo").doc("userLogin").set({
+                db.collection("EATRAIDEE").doc(email).set({
                     Username: username,
                     Email: email,
                     Password: password,
