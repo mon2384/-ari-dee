@@ -13,6 +13,11 @@
         </div>
         <div class="divsideright">
 
+            <h1 onprogress="document.getElementById('username').innerText = 'Username : ' + localStorage.getItem('Username')" id="username">Username : </h1>
+
+
+
+
         </div>
         <div class="editpfpdiv">   
             <div id="edittext"><b>Editprofile</b></div>     
@@ -20,11 +25,25 @@
         <div class="foodfoot">
 
         </div>
+        <div class="caldivdiff">
+
+        </div>
 
 
 
 
     </div>
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script> <!-- เพิ่ม  Library -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script><!-- เพิ่ม  Library -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script> <!-- เพิ่ม  Library -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script> <!-- เพิ่ม  Library -->
+
+    <script src="../loginPage/FirebaseConfig.js"></script> <!-- เปิดใช้งานไฟล์ firebaseConfig.js -->
+    <script src="profilePage.js"></script>
     
 </body>
 </html>

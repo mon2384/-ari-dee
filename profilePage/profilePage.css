@@ -27,6 +27,7 @@ body {
 }
 .divsideright{
     position: absolute;
+    color: white;
     background-color: rgb(154, 154, 154);
     height: 50%;
     width: 72.5%;
@@ -56,10 +57,23 @@ body {
 .foodfoot{
     position: absolute;
     background-color: rgb(154, 154, 154);
-    height: 50%;
+    height: 35%;
     width: 72.5%;
-    right: 2.5%;
+    left: 2.5%;
     bottom: 5%;
     border-radius: 25px;
 
+}
+.caldivdiff{
+    position: absolute;
+    background-color: gray;
+    height: 35%;
+    width: 20%;
+    right: 2.5%;
+    bottom: 5%;
+    border-radius: 25px;
+}
+h1 {
+    position: absolute;
+    left: 1.5%;
 }
