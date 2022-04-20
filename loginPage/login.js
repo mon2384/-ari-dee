@@ -71,10 +71,14 @@ function goreg(){
             icon: 'success',
             title: `Welcome ${email}`,
             text: `Havefun`,
+            text:`please wait 3 sec..`,
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
             
             
         }).then((result) => {
-          if (result.isConfirmed) {
+          if (result.isDismissed) {
             openrl()
           }
         })
@@ -105,6 +109,7 @@ function goreg(){
         icon: 'success',
         title: 'lol...',
         text: `GOODBYE ${email}`,})
+        
         
   
     })

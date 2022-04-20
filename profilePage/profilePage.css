@@ -46,6 +46,7 @@ body {
     border-radius: 25px;
     text-align: center;
     font-size: 20px;
+    cursor: pointer;
     
 }
 #edittext{
@@ -53,6 +54,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
 }
 .foodfoot{
     position: absolute;
@@ -72,8 +74,27 @@ body {
     right: 2.5%;
     bottom: 5%;
     border-radius: 25px;
+    
 }
 h1 {
     position: relative;
     left: 1.5%;
+}
+.logoutbtn{
+        position: absolute;
+        background-color: rgb(116, 116, 116);
+        height: 7.5%;
+        width: 20%;
+        right: 1.25%;
+        top: 2.5%;
+        border-radius: 25px;
+        text-align: center;
+        font-size: 20px;
+        cursor: pointer;
+}
+.logoutbtn:hover{
+    background-color: rgb(67, 67, 67);
+}
+.editpfpdiv:hover{
+    background-color: rgb(67, 67, 67);
 }
