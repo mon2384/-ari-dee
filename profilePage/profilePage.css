@@ -76,7 +76,7 @@ body {
     border-radius: 25px;
     
 }
-h1 {
+.headofh1 {
     position: relative;
     left: 1.5%;
 }
@@ -98,3 +98,21 @@ h1 {
 .editpfpdiv:hover{
     background-color: rgb(67, 67, 67);
 }
+.grid-container {
+    display: grid;
+    grid: 50% / 50% 50%;
+    grid-gap: 10px;
+    
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    
+    text-align: left;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+  .indiv{
+      position: absolute;
+      left: 0%;
+  }
