@@ -52,6 +52,10 @@ function goreg(){
         .then(function (doc) {
           if(doc.exists){
               localStorage.setItem("Username", doc.data().Username)
+              
+              localStorage.setItem("Email", doc.data().Email)
+              
+              
           }
           else{
             console.log("does not exist")
