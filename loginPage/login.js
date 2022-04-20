@@ -54,10 +54,16 @@ function goreg(){
             icon: 'success',
             title: `Welcome ${email}`,
             text: `Havefun`,
-
+            
+            
+        }).then((result) => {
+          if (result.isConfirmed) {
+            openrl()
+          }
         })
+
         
-        openrl()
+        
       })
       .catch((error) => {
         var errorCode = error.code;
@@ -94,5 +100,6 @@ function goreg(){
 
 
   function openrl(){
+
     window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
   }
