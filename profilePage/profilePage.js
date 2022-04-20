@@ -1,6 +1,7 @@
 const db = firebase.firestore()
 const auth = firebase.auth()
 var user = auth.currentUser
+let tdee
 
 
 
@@ -46,4 +47,12 @@ function Logout() {
   function openlg(){
 
     window.location.href = '../loginPage/index.html'
+  }
+
+
+  function select(){
+  var n = document.getElementById('TDEESELECT').value;
+    n = tdee;
+    console.log(tdee);
+
   }

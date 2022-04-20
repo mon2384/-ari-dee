@@ -118,22 +118,22 @@ body {
   }
 
 
-  /*------------------------------------------------------------------------------------------------*/
-  /*the container must be positioned relative:*/
+  /*------------------------------------------------------------------------------------------------
+
 .custom-select {
-    position: relative;
+    position: absolute;
     font-family: Arial;
   }
   
   .custom-select select {
-    display: none; /*hide original SELECT element:*/
+    display: none; 
   }
   
   .select-selected {
-    background-color: DodgerBlue;
+    background-color: rgb(127, 127, 127);
   }
   
-  /*style the arrow inside the select element:*/
+ /
   .select-selected:after {
     position: absolute;
     content: "";
@@ -145,13 +145,13 @@ body {
     border-color: #fff transparent transparent transparent;
   }
   
-  /*point the arrow upwards when the select box is open (active):*/
+
   .select-selected.select-arrow-active:after {
     border-color: transparent transparent #fff transparent;
     top: 24px;
   }
   
-  /*style the items (options), including the selected item:*/
+  
   .select-items div,.select-selected {
     color: #ffffff;
     padding: 8px 16px;
@@ -163,10 +163,10 @@ body {
     border-radius: 25px;
   }
   
-  /*style items (options):*/
+  
   .select-items {
     position: absolute;
-    background-color: DodgerBlue;
+    background-color: rgb(85, 85, 85);
     top: 100%;
     left: 0;
     right: 0;
@@ -175,7 +175,7 @@ body {
     border-radius: 25px;
   }
   
-  /*hide the items when the select box is closed:*/
+  
   .select-hide {
     display: none;
   }
@@ -183,4 +183,4 @@ body {
   .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
   }
-  /*------------------------------------------------------------------------------------*/
+  ------------------------------------------------------------------------------------*/

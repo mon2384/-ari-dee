@@ -3,6 +3,10 @@
 <head>
     <link rel="stylesheet" href="profilePage.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
 </head>
 <body>
@@ -24,17 +28,19 @@
                 <div class="item4">Gender : male</div>
                 <div class="item5">
                     <br>
-                    <div class="custom-select" style="width:200px;">
-                        <select>
-                          <option value="0">กรุณาเลือก</option>
-                          <option value="1">ไม่ออกกำลังกาย </option>
-                          <option value="2">ออกกำลังกาย 1-3 วัน</option>
-                          <option value="3">ออกกำลังกาย 4-5 วัน</option>
-                          <option value="4">ออกกำลังกาย 6-7 วัน</option>
-                          <option value="5">ออกกำลังกายทุกวันเช้าเย็น </option>
+ 
+                    <div class="custom-select mb-3">
+                        <select onchange="tdee=document.getElementById('TDEESELECT').value" id="TDEESELECT">
+                          <option value="0" >กรุณาเลือก</option>
+                          <option value="1.2" >ไม่ออกกำลังกาย </option>
+                          <option value="1.35">ออกกำลังกาย 1-3 วัน</option>
+                          <option value="1.5">ออกกำลังกาย 4-5 วัน</option>
+                          <option value="1.75">ออกกำลังกาย 6-7 วัน</option>
+                          <option value="1.9">ออกกำลังกายทุกวันเช้าเย็น </option>
 
                         </select>
-                      </div>
+                    </div>
+                      
                 </div>
             </div>
 
@@ -46,7 +52,7 @@
 
 
         </div>
-        <div class="editpfpdiv">   
+        <div class="editpfpdiv" onclick="alert('No!!!')">   
             <div id="edittext"><b>Editprofile</b></div>     
         </div>
         <div class="foodfoot">
@@ -78,7 +84,8 @@
     <script src="../loginPage/FirebaseConfig.js"></script> <!-- เปิดใช้งานไฟล์ firebaseConfig.js -->
     <script src="profilePage.js"></script>
 
-    <script src="selector.js"></script>
+
+    <!--<script src="selector.js"></script>-->
     
 </body>
 </html>
