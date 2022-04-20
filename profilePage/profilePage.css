@@ -1,0 +1,36 @@
+body {
+    background: rgb(48, 48, 48);
+}
+.divcenterbox {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    height: 95%;
+    width: 97.25%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    overflow: auto;
+}
+.divofpfp{
+    position: relative;
+    background-color: gray;
+    height: 40%;
+    width: 20%;
+    left: 2.5%;
+    top: 5%;
+    border-radius: 25px;
+}
+.divsideright{
+    position: absolute;
+    background-color: rgb(154, 154, 154);
+    height: 40%;
+    width: 72.5%;
+    right: 2.5%;
+    top: 5%;
+    border-radius: 25px;
+
+}

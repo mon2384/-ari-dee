@@ -7,6 +7,7 @@ body{
     justify-content: right;
     min-height: 100vh;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .container{
     background-color: #fff;
