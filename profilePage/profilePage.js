@@ -1,7 +1,8 @@
 const db = firebase.firestore()
 const auth = firebase.auth()
 var user = auth.currentUser
-let tdee
+let tdee;
+let bmr = 1800;
 
 
 
@@ -50,9 +51,9 @@ function Logout() {
   }
 
 
-  function select(){
-  var n = document.getElementById('TDEESELECT').value;
-    n = tdee;
-    console.log(tdee);
+  function bmrXtdee(){
+    let aws = bmr *  tdee
+    document.getElementById('Energypdcal').innerText = "Energy/day : "+aws+ " kcal";
 
   }
+

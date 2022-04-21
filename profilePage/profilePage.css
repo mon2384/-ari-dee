@@ -118,69 +118,23 @@ body {
   }
 
 
-  /*------------------------------------------------------------------------------------------------
+.selectposition{
+position: absolute;
 
-.custom-select {
-    position: absolute;
-    font-family: Arial;
-  }
-  
-  .custom-select select {
-    display: none; 
-  }
-  
-  .select-selected {
-    background-color: rgb(127, 127, 127);
-  }
-  
- /
-  .select-selected:after {
-    position: absolute;
-    content: "";
-    top: 28px;
-    right: -175px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: #fff transparent transparent transparent;
-  }
-  
-
-  .select-selected.select-arrow-active:after {
-    border-color: transparent transparent #fff transparent;
-    top: 24px;
-  }
-  
-  
-  .select-items div,.select-selected {
-    color: #ffffff;
-    padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: pointer;
-    user-select: none;
-    width: 350px;
-    border-radius: 25px;
-  }
-  
-  
-  .select-items {
-    position: absolute;
-    background-color: rgb(85, 85, 85);
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    width: 383px;
-    border-radius: 25px;
-  }
-  
-  
-  .select-hide {
-    display: none;
-  }
-  
-  .select-items div:hover, .same-as-selected {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-  ------------------------------------------------------------------------------------*/
+}
+.calperdaydiv{
+  position: absolute;
+  background-color: rgb(116, 116, 116);
+  height: 16%;
+  width: 40%;
+  left: 47%;
+  top: 80%;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 20px;
+}
+.cpdtext{
+  position: absolute;
+  font-size: 30px;
+  left: 10%;
+}
