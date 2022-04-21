@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Firebase Storages</title>
+    <style>
+        img {
+            height: 200px;
+            width: 300px;
+            border: 2px black solid;
+        }
+    </style>
+</head>
+
+<body>
+    <!---ปุ่มต่างต่าง(button) , img คือ กรอบที่ใช้แสดงรูปภาพ , input ไว้เปิดหาโฟดเดอร์เพื่อเลือกหาไฟล์มาใส่ , Label คือกรอบที่ใช่แสดงข้อความ และid ที่ระบุว่าตัวไหนคือตัวไหน-->
+    <font size="7"><label>Upload</label></font><br><br>
+    <input type="file" id="namebox"> <br><br>
+    <img id="myimg"><label id="upprogress"></label> <br><br>
+    <button id="upbtn">Upload Image</button>
+
+</body>
+<!---ตรงนี้คือเรียกใช่ไลบราลี่ ของfirebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script> <!-- เพิ่ม  Library -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script><!-- เพิ่ม  Library -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script> <!-- เพิ่ม  Library -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script> <!-- เพิ่ม  Library -->
+
+
+<script>
+    //ตรงนี้เอาคีร์ของน้องมาใส่เพื่อรอการเชื่อม
+    const firebaseConfig = {
+        apiKey: "AIzaSyAy9C07hdwVcteyIHdu-yyls1p3isIcWeY",
+        authDomain: "zcg12-65.firebaseapp.com",
+        databaseURL: "https://zcg12-65-default-rtdb.firebaseio.com",
+        projectId: "zcg12-65",
+        storageBucket: "zcg12-65.appspot.com",
+        messagingSenderId: "989333029174",
+        appId: "1:989333029174:web:e2307d114c22a3291db397",
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    //ทีเก็บไฟล์ที่เราจะดึงมา
+    var files = [];
+    var reader = new FileReader();
+    //เอา id ของปุ่มและกล่องข้อความตางมาเชื่อมกับตัวแปร
+    var namebox = document.getElementById('namebox');
+    var myimg = document.getElementById('myimg');
+    var proglab = document.getElementById('upprogress');
+    var UpBtn = document.getElementById('upbtn');
+
+    //คำสั่งใช้งานเมื่อมีการเลือกไฟล์
+    namebox.onchange = e => {
+        files = e.target.files;
+        //นำไฟล์ที่เราพึ่งอัพโหลดลงfilesนำมาอ่านข้อมูล files[0] ตำแหน่งที่เก็บไว้
+        reader.readAsDataURL(files[0]);
+    }
+
+    //คำสั่งที่เมื่อreaderมีการทำงานจะเรียกใช้
+    reader.onload = function () {
+        //เก็บข้อมูลตัวไฟล์ที่เราเลือก
+        namebox = files[0];
+        //จะอ่านข้อมูลในดาต้าไฟล์ที่เลือกแล้วนำมาโชว์
+        myimg.src = reader.result;
+    }
+
+    function UploadProcess() {
+        var storageRef = firebase.storage().ref();
+        const uploadTask = storageRef.child('images/'+ email +'/pfp.jpg').put(files[0]);
+        alert("Upload Success");
+    }
+    
+    UpBtn.onclick = UploadProcess;
+
+    var email = localStorage.getItem('Email')
+
+</script>
+
+</html>

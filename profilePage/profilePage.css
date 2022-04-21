@@ -34,19 +34,21 @@ body {
     right: 2.5%;
     top: 5%;
     border-radius: 25px;
+    
 
 }
 .editpfpdiv{
     position: absolute;
-    background-color: rgb(154, 154, 154);
+    background-color: rgb(116, 116, 116);
     height: 7.5%;
     width: 20%;
-    left: 2.5%;
-    top: 47.5%;
+    right: 1.25%;
+    top: 12%;
     border-radius: 25px;
     text-align: center;
     font-size: 20px;
     cursor: pointer;
+    
     
 }
 #edittext{
@@ -132,9 +134,34 @@ position: absolute;
   border-radius: 25px;
   text-align: center;
   font-size: 20px;
+  overflow: hidden;
 }
 .cpdtext{
   position: absolute;
   font-size: 30px;
   left: 10%;
+}
+img.a {
+  width: 300px;
+  height: 287px;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 25px;
+}
+
+
+.uplpfp{
+  position: absolute;
+  background-color: rgb(116, 116, 116);
+  height: 7.5%;
+  width: 20%;
+  left: 2.5%;
+  top: 47.5%;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+.uplpfp:hover{
+  background-color: rgb(67, 67, 67);
 }

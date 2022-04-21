@@ -20,8 +20,16 @@ function register() {
                 Swal.fire({
                     icon: 'success',
                     title: 'Register Success',
-                    text: 'Thanks you',
-                })
+                    text:`please wait 3 sec..`,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                }).then((result) => {
+                    if (result.isDismissed) {
+                        gotologin()
+                    }
+                  })
+          
 
                 auth.signInWithEmailAndPassword(email, password)
 
@@ -35,11 +43,20 @@ function register() {
                 console.log("Success")
                 resetAllInput()
 
+
             })
             .catch((error) => {
                 var errorCode = error.code
                 var errorMessage = error.message
                 console.log("Error " + errorCode + " : " + errorMessage)
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'This email is already in use',
+                    text:`please use new email`,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                })
             })
     }
     else {
@@ -50,4 +67,7 @@ function register() {
 function getUsername(){
     var username = getElementById('username').value
     return username
+}
+function gotologin(){
+    window.location.href="../loginPage/index.html"
 }

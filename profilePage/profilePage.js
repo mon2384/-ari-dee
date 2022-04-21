@@ -7,10 +7,26 @@ let bmr
 var email =localStorage.getItem('Email')
 var heig,weig,ageg,sex
 
+var floor
+
+var files = [];
+var reader = new FileReader();
+var storageRef = firebase.storage().ref();
+
+
+
 RetriveData()
 document.getElementById('username').innerText = "Username : " + localStorage.getItem('Username')
 document.getElementById('email').innerText =    "Email    : " + localStorage.getItem('Email')
-
+loadpfp()
+Swal.fire({
+  icon: 'success',
+  title: `Welcome ${localStorage.getItem('Email')}`,
+  text:`please wait 3 sec..`,
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true
+})
 
 function BMR(kg,cm,age,gender){
   
@@ -64,7 +80,7 @@ function Logout() {
 
 
   function bmrXtdee(){
-    let aws = bmr *  tdee
+    let aws = floor *  tdee
     document.getElementById('Energypdcal').innerText = "Energy/day : "+aws+ " kcal";
 
   }
@@ -118,6 +134,8 @@ function Logout() {
         Gender : result.value.ge
       })
 
+      RetriveData()
+
 
     })
     
@@ -136,11 +154,12 @@ function Logout() {
           document.getElementById('weight').innerText = "weight : " + weig +" kg"
           document.getElementById('Age').innerText = "Age : " + ageg +" yrs"
           document.getElementById('Gender').innerText = "Gender : " + sex
-          bmr = Math.ceil(BMR(weig,heig,ageg,sex))
+          bmr = BMR(weig,heig,ageg,sex)
+          floor = Math.round(bmr)
         }
         else{
           console.log("does not exist")
-          alert("Successfully")
+          alert("Please EDIT YOUR PROFILE")
         }
       })
       .catch(function(error){
@@ -148,3 +167,81 @@ function Logout() {
       })
   }
 
+  function UploadProcess() {
+    const uploadTask = storageRef.child('images/'+ email +'/pfp.jpg').put(files[0]);
+    alert("Upload Success");
+
+    namebox.onchange = e => {
+      files = e.target.files;
+      //นำไฟล์ที่เราพึ่งอัพโหลดลงfilesนำมาอ่านข้อมูล files[0] ตำแหน่งที่เก็บไว้
+      reader.readAsDataURL(files[0]);
+  }
+
+  //คำสั่งที่เมื่อreaderมีการทำงานจะเรียกใช้
+  reader.onload = function () {
+      //เก็บข้อมูลตัวไฟล์ที่เราเลือก
+      namebox = files[0];
+      //จะอ่านข้อมูลในดาต้าไฟล์ที่เลือกแล้วนำมาโชว์
+      myimg.src = reader.result;
+  }
+}
+
+
+function uploadpfp(){
+
+  var storageRef = firebase.storage().ref();
+  const uploadTask = storageRef.child('images/'+ email +'/pfp.jpg').put(files[0]);
+  alert("Upload Success");
+
+}
+
+async function uplbtnclick(){
+
+  const { value: file } = await Swal.fire({
+    title: 'Select image',
+    input: 'file',
+    inputAttributes: {
+      'accept': 'image/*',
+      'aria-label': 'Upload your profile picture'
+    }
+  })
+  
+  if (file) {
+    const reader = new FileReader()
+    const uploadTask = storageRef.child('images/'+ email +'/pfp.jpg').put(file);
+    reader.onload = (e) => {
+      Swal.fire({
+        title: 'Your uploaded picture',
+        imageUrl: e.target.result,
+        imageAlt: 'The uploaded picture'
+      }).then((result) => {
+        if (result.isDismissed||result.isConfirmed) {
+          loadpfp()
+          Swal.fire({
+            icon: 'success',
+            title: `UPLOAD PFP SUCCESS`,
+            text:`please wait 3 sec..`,
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+          })
+
+        }
+      })
+      
+      
+    
+
+    }
+    reader.readAsDataURL(file)
+    
+
+    
+  }
+
+}
+function loadpfp(){
+  storageRef.child('images/'+ email +'/pfp.jpg').getDownloadURL().then((url) => {
+    pfpload.src = url;
+});
+}
