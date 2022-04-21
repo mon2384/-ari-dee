@@ -6,6 +6,7 @@ let tdee;
 let bmr 
 var email =localStorage.getItem('Email')
 var heig,weig,ageg,sex
+var tdeexbmr 
 
 var floor
 
@@ -81,7 +82,8 @@ function Logout() {
 
   function bmrXtdee(){
     let aws = floor *  tdee
-    document.getElementById('Energypdcal').innerText = "Energy/day : "+aws+ " kcal";
+    tdeexbmr =  Math.round(aws)
+    document.getElementById('Energypdcal').innerText = "Energy/day : "+ tdeexbmr + " kcal";
 
   }
 
