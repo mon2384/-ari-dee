@@ -12,6 +12,7 @@ var foodtimeselect = localStorage.getItem('foodTime')
 var floor
 var ttcaltopfp = localStorage.getItem('ttcaltopfp')
 
+var caldiff
 var files = [];
 var reader = new FileReader();
 var storageRef = firebase.storage().ref();
@@ -25,6 +26,7 @@ din = localStorage.getItem('dinsit')
 RetriveData()
 updatecal()
 Caltotal()
+Difftotal()
 
 document.getElementById('bfcalnow').innerText = "Kcal: "+ bf
 document.getElementById('luncalnow').innerText = "Kcal: "+ lun
@@ -96,7 +98,9 @@ function Logout() {
   function bmrXtdee(){
     let aws = floor *  tdee
     tdeexbmr =  Math.round(aws)
+    Difftotal()
     document.getElementById('Energypdcal').innerText = "Energy/day : "+ tdeexbmr + " kcal";
+    
 
   }
 
@@ -291,6 +295,12 @@ function Caltotal(){
   allttcla = parseInt(bf) + parseInt(lun) +parseInt(din)
 
   document.getElementById('calttkcal').innerText = "Totalcal: "+ allttcla +"kcal"
+  
+}
+function Difftotal(){
+  caldiff = tdeexbmr - allttcla
+
+  document.getElementById('diffof2kcal').innerText = "kcalDiff: "+ caldiff +"kcal"
   
 }
 
