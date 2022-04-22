@@ -130,3 +130,6 @@ function goreg(){
     localStorage.setItem("UID", uid)
     return;
 }
+localStorage.setItem('bfsit', 0)
+localStorage.setItem('lunsit', 0)
+localStorage.setItem('dinsit', 0)

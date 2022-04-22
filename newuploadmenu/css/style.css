@@ -132,7 +132,7 @@ img {
 .header .header__cart .header__submenu .cart {
   fill: #ea332a;
   display: inline-block;
-  float: left;
+  float : left;
   margin-right: 2px;
   cursor: pointer;
 }

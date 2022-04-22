@@ -1,6 +1,7 @@
 var totalkcal
 var ttcalcal
-
+var foodtimeselect = localStorage.getItem('foodTime')
+var bflundin
 function totalkcalcal(){
   var a = totalkcal.split(',')
   ttcalcal = 0
@@ -9,10 +10,39 @@ function totalkcalcal(){
   }
 
 }
+function FT(){
+  if(foodtimeselect == 1){
+    bflundin = "Breakfast"
+  }else if(foodtimeselect == 2){
+    bflundin = "Lunck"
+  } else if(foodtimeselect == 3){
+    bflundin = "Dinner"
+  }else{
+    bflundin = "ERROR 404"
+  }
+}
+function FT2(){
+  if(foodtimeselect == 1){
+    localStorage.setItem('bfsit', ttcalcal)
+  }else if(foodtimeselect == 2){
+    localStorage.setItem('lunsit', ttcalcal)
+  } else if(foodtimeselect == 3){
+    localStorage.setItem('dinsit', ttcalcal)
+  }else{
+    bflundin = "ERROR 404"
+  }
+}
+
+
+
+
+
 
 (function() {
   // VARS
+  FT()
   document.getElementById('username').innerText = "Username : " + localStorage.getItem('Username')
+  document.getElementById('foodnow').innerText = "Select : " + bflundin
   const productsContainer = document.querySelector("#grid");
   const cartContainer = document.querySelector("#shopping-cart");
   const cartContent = document.querySelector("#cart-content");
@@ -205,10 +235,14 @@ function totalkcalcal(){
     totalkcal = localStorage.getItem('totalkcal')
     totalkcalcal()
     localStorage.setItem('ttcl', ttcalcal)
+    FT2()
 
     const cartProducts = cartContent.querySelector("tbody").innerHTML;
     if (cartProducts !== "" && confirm("Are you sure you want to checkout?")) {
       clearCart();
+      localStorage.setItem('ttcaltopfp', ttcalcal)
+      window.location.href = '../profilePage/profilePage.html'
+
     } else {
       return;
     }

@@ -7,16 +7,29 @@ let bmr
 var email =localStorage.getItem('Email')
 var heig,weig,ageg,sex
 var tdeexbmr 
+var foodtimeselect = localStorage.getItem('foodTime')
 
 var floor
+var ttcaltopfp = localStorage.getItem('ttcaltopfp')
 
 var files = [];
 var reader = new FileReader();
 var storageRef = firebase.storage().ref();
-
+var bf,lun,din
+var allttcla = 0
+bf = localStorage.getItem('bfsit')
+lun = localStorage.getItem('lunsit')
+din = localStorage.getItem('dinsit')
 
 
 RetriveData()
+updatecal()
+Caltotal()
+
+document.getElementById('bfcalnow').innerText = "Kcal: "+ bf
+document.getElementById('luncalnow').innerText = "Kcal: "+ lun
+document.getElementById('dincalnow').innerText = "Kcal: "+ din
+
 document.getElementById('username').innerText = "Username : " + localStorage.getItem('Username')
 document.getElementById('email').innerText =    "Email    : " + localStorage.getItem('Email')
 loadpfp()
@@ -247,3 +260,39 @@ function loadpfp(){
     pfpload.src = url;
 });
 }
+
+
+function gobybf(){
+  localStorage.setItem('foodTime', 1)
+  window.location.href = '../newuploadmenu/index.html'
+
+}
+function gobylun(){
+  localStorage.setItem('foodTime', 2)
+  window.location.href = '../newuploadmenu/index.html'
+}
+function gobydin(){
+  localStorage.setItem('foodTime', 3)
+  window.location.href = '../newuploadmenu/index.html'
+}
+function updatecal(){
+  if(foodtimeselect == 1){
+    bf = ttcaltopfp
+
+  }else if(foodtimeselect == 2){
+    lun = ttcaltopfp
+
+  } else if(foodtimeselect == 3){
+    din = ttcaltopfp
+
+  }
+}
+function Caltotal(){
+  allttcla = parseInt(bf) + parseInt(lun) +parseInt(din)
+
+  document.getElementById('calttkcal').innerText = "Totalcal: "+ allttcla +"kcal"
+  
+}
+
+
+

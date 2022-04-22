@@ -199,7 +199,7 @@ img.a {
   height: 42.5%;
   width: 95%;
   right: 2.5%;
-  top: 5%;
+  top: 5%; 
   border-radius: 5px;
   text-align: center;
   font-size: 20px;
@@ -215,4 +215,74 @@ img.a {
   text-align: center;
   font-size: 20px;
 
+}
+.bfdivtext{
+  width: 90% ;
+  height: 20%;
+  bottom: 5%;
+  left: 5%;
+  position: absolute;
+  background-color: beige;
+  color: black;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.bfdivtext:hover{background-color: rgb(245, 245, 220, 0.5);}
+.divtextinse{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+.lundivtext{
+  width: 90% ;
+  height: 20%;
+  bottom: 5%;
+  left: 5%;
+  position: absolute;
+  background-color: beige;
+  color: black;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.lundivtext:hover{background-color: rgb(245, 245, 220, 0.5);}
+
+.dindivtext{
+  width: 90% ;
+  height: 20%;
+  bottom: 5%;
+  left: 5%;
+  position: absolute;
+  background-color: beige;
+  color: black;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.dindivtext:hover{background-color: rgb(245, 245, 220, 0.5);}
+
+.bfcalshow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+}
+.texttotalcal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+}
+.difftext2cal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+  font-size: 30px;
 }
