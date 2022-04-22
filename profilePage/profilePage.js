@@ -300,8 +300,12 @@ function Caltotal(){
 function Difftotal(){
   caldiff = tdeexbmr - allttcla
 
-  document.getElementById('diffof2kcal').innerText = "kcalDiff: "+ caldiff +"kcal"
-  
+  if(isNaN(caldiff)){
+    document.getElementById('diffof2kcal').innerText = "kcalDiff: "+ 0 +" kcal"
+  }else{
+
+  document.getElementById('diffof2kcal').innerText = "kcalDiff: "+ caldiff +" kcal"
+  }
 }
 
 

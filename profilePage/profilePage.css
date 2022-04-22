@@ -265,10 +265,11 @@ img.a {
 .bfcalshow {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 75%;
   transform: translate(-50%, -50%);
   color: rgb(0, 0, 0);
   font-size: 30px;
+  width: 100%;
 }
 .texttotalcal{
   position: absolute;
@@ -277,6 +278,7 @@ img.a {
   transform: translate(-50%, -50%);
   color: rgb(0, 0, 0);
   font-size: 30px;
+  width: 100%;
 }
 .difftext2cal{
   position: absolute;
@@ -285,4 +287,5 @@ img.a {
   transform: translate(-50%, -50%);
   color: rgb(0, 0, 0);
   font-size: 30px;
+  width: 100%;
 }
