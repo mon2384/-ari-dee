@@ -71,8 +71,13 @@
         const uploadTask = storageRef.child('images/'+ email +'/pfp.jpg').put(files[0]);
         alert("Upload Success");
     }
+    function UploadProcess2() {
+        var storageRef = firebase.storage().ref();
+        const uploadTask = storageRef.child('Foodimages/'+namebox.name).put(files[0]);
+        alert("Upload Success");
+    }
     
-    UpBtn.onclick = UploadProcess;
+    UpBtn.onclick = UploadProcess2;
 
     var email = localStorage.getItem('Email')
 
