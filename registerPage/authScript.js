@@ -16,6 +16,13 @@ function register() {
         auth.createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 user = userCredential.user
+                db.collection("EATRAIDEE").doc(email).set({
+                    Username: username,
+                    Email: email,
+                    Password: password,
+                    UID: user.uid,
+                    Role: "User"
+                })
                 // console.log("Success")
                 Swal.fire({
                     icon: 'success',
