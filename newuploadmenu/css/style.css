@@ -276,6 +276,7 @@ img {
   background-color: #ea332a;
   border: 1px solid #b61a12;
   color: #fff;
+  
 }
 .card__btn:hover, .card__btn:focus, .card__btn:active {
   transform: translatey(2px);

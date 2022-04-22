@@ -1,8 +1,18 @@
 var totalkcal
+var ttcalcal
 
+function totalkcalcal(){
+  var a = totalkcal.split(',')
+  ttcalcal = 0
+  for(var i=0;i <= a.length - 1 ;i++){
+    ttcalcal += parseInt(a[i])
+  }
+
+}
 
 (function() {
   // VARS
+  document.getElementById('username').innerText = "Username : " + localStorage.getItem('Username')
   const productsContainer = document.querySelector("#grid");
   const cartContainer = document.querySelector("#shopping-cart");
   const cartContent = document.querySelector("#cart-content");
@@ -193,6 +203,8 @@ var totalkcal
 
     localStorage.setItem('totalkcal',  getCartItemPrices())
     totalkcal = localStorage.getItem('totalkcal')
+    totalkcalcal()
+    localStorage.setItem('ttcl', ttcalcal)
 
     const cartProducts = cartContent.querySelector("tbody").innerHTML;
     if (cartProducts !== "" && confirm("Are you sure you want to checkout?")) {
