@@ -1,0 +1,48 @@
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+  }
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+.column img {
+    transition: .5s ease;
+    
+}
+.column img:hover {
+    opacity: 1;
+    filter: blur(5px);
+  }
+
+  /* When you mouse over the container, fade in the overlay title */
+  .column :hover.middle  {
+    opacity: 1;
+  }
+  .container:hover .image {
+    opacity: 0.3;
+  }
+  .peetoIm:hover .middle {
+    opacity: 1;
+  }
+  .middle { 
+transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  }
+  .text {
+    background-color: #04AA6D;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+  
+

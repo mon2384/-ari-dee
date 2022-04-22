@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MENU Page | Gin ari dee</title>
+    <link rel="stylesheet" href="styleMenu.css">
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <div style="text-align:center">
+        <h2>MENU</h2>
+        <p>Choose your menu</p>
+    </div>
+
+    <!-- แถวรูปภาพ -->
+    
+    <div class="row">
+        <div class="column">
+            <img src="https://firebasestorage.googleapis.com/v0/b/test-gin-ari-dee.appspot.com/o/%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B8%A2%E0%B8%A1.jpg?alt=media&token=5cfaf17b-7942-412e-97a8-d8520d8cad64"
+                alt="kawmukratium" width="250" height="250"  onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="https://firebasestorage.googleapis.com/v0/b/test-gin-ari-dee.appspot.com/o/%E0%B9%82%E0%B8%88%E0%B9%8A%E0%B8%81%E0%B8%AB%E0%B8%A1%E0%B8%B9.jpg?alt=media&token=929ede11-034e-4c56-9c63-7cfc2d76a445"
+                alt="jokmu" width="250" height="250"  onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="https://firebasestorage.googleapis.com/v0/b/test-gin-ari-dee.appspot.com/o/%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%84%E0%B8%81%E0%B9%88.jpg?alt=media&token=416c375a-dcc5-487a-9ae3-c35034c444c6"
+                alt="kawmunkai" width="250" height="250"  onclick="myFunction(this);">
+        </div>
+        <div class="column">
+            <img src="https://firebasestorage.googleapis.com/v0/b/test-gin-ari-dee.appspot.com/o/%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B9%8A%E0%B8%A2%E0%B8%A7%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg?alt=media&token=51d45768-3418-4497-b77a-f6790e314b2c"
+                alt="shrimp dumplings" width="250" height="250"  onclick="myFunction(this);">
+        </div>
+        <div class="peetoIm">
+        <div class="column">
+            <img src="https://firebasestorage.googleapis.com/v0/b/test-gin-ari-dee.appspot.com/o/peeto.jpg?alt=media&token=41809ee6-60a1-4186-a27e-bc226458ed58"
+                alt="peeto" width="250" height="250"  onclick="myFunction(this);">
+            <div class="middle">
+                <div class="text">peeto</div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script> <!-- เพิ่ม  Library -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script><!-- เพิ่ม  Library -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script> <!-- เพิ่ม  Library -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script> <!-- เพิ่ม  Library -->
+
+    <script src="firebaseconfigMenu.js"></script> <!-- เปิดใช้งานไฟล์ firebaseConfig.js -->
+    <script src="scripMenu.js"></script>
+</body>
+
+</html>
